@@ -1,101 +1,115 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rethasi's Portfolio</title>
+    <title>My Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
-        .container {
-            max-width: 800px;
-            margin: 2em auto;
-            background-color: #fff;
-            padding: 2em;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .section {
-            display: none;
-        }
-        .section.active {
-            display: block;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-        }
-        nav button {
-            padding: 10px 15px;
-            border: none;
+
+        header {
             background-color: #333;
             color: #fff;
-            cursor: pointer;
+            text-align: center;
+            padding: 1rem 0;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
         }
-        nav button.active {
-            background-color: #555;
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 0.5rem 0;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: #fff;
+            padding: 2rem;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-item {
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .portfolio-item h3 {
+            margin-top: 1rem;
+        }
+
+        .portfolio-item p {
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #333;
+            color: #fff;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
     <div class="container">
-        <nav>
-            <button onclick="showSection('skills')" class="active">Skills</button>
-            <button onclick="showSection('projects')">Projects</button>
-            <button onclick="showSection('contact')">Contact</button>
-        </nav>
-
-        <div id="skills" class="section active">
-            <h2>Skills</h2>
-            <ul>
-                <li>Python</li>
-                <li>HTML & CSS</li>
-                <li>Angular JS</li>
-                <li>JavaScript</li>
-                <li>SQL</li>
-                <li>Java</li>
-            </ul>
-        </div>
-
-        <div id="projects" class="section">
-            <h2>Projects</h2>
-            <ul>
-                <li><a href="#">Project 1</a></li>
-                <li><a href="#">Project 2</a></li>
-                <!-- Add more projects as needed -->
-            </ul>
-        </div>
-
-        <div id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Email: rethasil09@gmail.com</p>
-            <p>Phone: +918197352540</p>
-        </div>
+        <section id="home">
+            <h2>Welcome</h2>
+            <p>Hello! I'm [Your Name], a passionate web developer. Welcome to my portfolio!</p>
+        </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I've been developing websites for over X years. I specialize in creating modern, responsive, and user-friendly websites.</p>
+        </section>
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="portfolio-item">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>This is a brief description of Project 1.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>This is a brief description of Project 2.</p>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>You can reach me at: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        </section>
     </div>
-
-    <script>
-        function showSection(id) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-
-            // Deactivate all buttons
-            const buttons = document.querySelectorAll('nav button');
-            buttons.forEach(button => {
-                button.classList.remove('active');
-            });
-
-            // Show the selected section
-            document.getElementById(id).classList.add('active');
-
-            // Activate the clicked button
-            const activeButton = Array.from(buttons).find(button => button.innerText.toLowerCase() === id);
-            activeButton.classList.add('active');
-        }
-    </script>
+    <footer>
+        &copy; 2023 [Your Name]
+    </footer>
 </body>
 </html>
